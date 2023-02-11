@@ -1,0 +1,61 @@
+body {
+    background-color: #000000;
+}
+h2 {
+    margin-top: 55px;
+    text-align: center;
+    color: #FFAC41;
+    font-size: 60px;
+    font-weight: bold;
+}
+.log h1 {
+    color: #FFAC41;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.Label {
+    font-weight: bold;
+    color: #FFAC41;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.form-box {
+    background-color: #323232;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 550px;
+    overflow: hidden;
+  }
+.form-box1 {
+    background-color: #1d1d1d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 500px;
+  }
+.form-control {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+.error-text {
+    color: red;
+    font-size: 12px;
+  }
+.submit-btn {
+    border-radius: 5px;
+    margin-top: 30px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #FF1E56;
+    width: 49.6vh;
+    border-color: #323232;
+  }
+  

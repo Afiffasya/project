@@ -1,4 +1,53 @@
-h1 {
-    color: white;
-    margin-top: 0;
-}
+
+.message {
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 50px;
+  }
+  
+  .message h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .message p {
+    font-size: 18px;
+    color: #999;
+    line-height: 1.5;
+    margin: 20px;
+  }
+
+
+  button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 8px rgba(0,0,0,0.2);
+  }
+  
+  button:active {
+    transform: translateY(0px);
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
+  }
+  
+  .back-icon {
+    margin-right: 10px;
+    fill: #fff;
+  }
+  

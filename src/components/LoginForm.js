@@ -51,9 +51,12 @@ const LoginForm = () => {
                   const session_id = response.data.session_id;
                   console.log(session_id);
                   if (session_id) {
-                    navigate("/Home");
                     localStorage.setItem("SID", session_id);
-                    alert("Berhasil login dengan session id: " + session_id);
+                    navigate("/");
+                    // window.location.assign("/")
+                    alert(
+                      `Berhasil login sebagai: ${values.username} dengan session id: ${session_id}`
+                    );
                   }
                   setIsLoading(false);
                 })
@@ -78,47 +81,48 @@ const LoginForm = () => {
   return (
     <>
       <div className="log">
-  <h2>You need to login first to watch movies !!!</h2>
-  <div className="form-box">
-  <h1>Login Form</h1>
-  <div className="form-box1">
-    <Form onSubmit={formik.handleSubmit}>
-      <Form.Group controlId="username">
-        <Form.Label className="Label">Username</Form.Label>
-        <Form.Control
-          className="form-control"
-          type="text"
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          value={formik.values.username}
-        />
-        <Form.Text className="error-text">
-          {formik.touched.username && formik.errors.username}
-        </Form.Text>
-      </Form.Group>
-      <Form.Group controlId="password">
-        <Form.Label className="Label">Password</Form.Label>
-        <Form.Control
-          className="form-control"
-          type="password"
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          value={formik.values.password}
-        />
-        <Form.Text className="error-text">
-          {formik.touched.password && formik.errors.password}
-        </Form.Text>
-      </Form.Group>
-      <Button className="btn btn-light submit-btn"
-        disabled={!formik.isValid || isLoading}
-        type="submit"
-      >Login
-      </Button>
-    </Form>
-  </div>
-  </div>
-</div>
-
+        <h2>You need to login first to watch movies !!!</h2>
+        <div className="form-box">
+          <h1>Login Form</h1>
+          <div className="form-box1">
+            <Form onSubmit={formik.handleSubmit}>
+              <Form.Group controlId="username">
+                <Form.Label className="Label">Username</Form.Label>
+                <Form.Control
+                  className="form-control"
+                  type="text"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  value={formik.values.username}
+                />
+                <Form.Text className="error-text">
+                  {formik.touched.username && formik.errors.username}
+                </Form.Text>
+              </Form.Group>
+              <Form.Group controlId="password">
+                <Form.Label className="Label">Password</Form.Label>
+                <Form.Control
+                  className="form-control"
+                  type="password"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  value={formik.values.password}
+                />
+                <Form.Text className="error-text">
+                  {formik.touched.password && formik.errors.password}
+                </Form.Text>
+              </Form.Group>
+              <Button
+                className="btn btn-light submit-btn"
+                disabled={!formik.isValid || isLoading}
+                type="submit"
+              >
+                Login
+              </Button>
+            </Form>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

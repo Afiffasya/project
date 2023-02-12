@@ -2,7 +2,10 @@ import Carousel from "react-bootstrap/Carousel";
 
 function Carousell() {
   return (
-    <div className="caro" style={{ textAlign: "center", margin: "auto", width: "100vh" }}>
+    <div
+      className="caro"
+      style={{ textAlign: "center", margin: "auto", width: "100vh" }}
+    >
       <Carousel slide={false}>
         <Carousel.Item interval={3500}>
           <img

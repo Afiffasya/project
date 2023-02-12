@@ -14,15 +14,13 @@ function Profile() {
       setSid(storedSid);
     }
   }, [navigate]);
-// console.log(sid)
   return (
-    <>
-      {sid ? (
-        <h1>You are logged in as {sid}</h1>
-      ) : (
-        <h1>Loading...</h1>
-      )}
-    </>
+    <div className="message">
+      {sid ? <h1>You are logged in as {sid}</h1> : <h1>Loading...</h1>}
+      <button onClick={() => navigate("/")}><svg class="back-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+    <path d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 10l5.293 5.293a1 1 0 010 1.414z"/>
+  </svg>Go to Home</button>
+    </div>
   );
 }
 

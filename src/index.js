@@ -7,14 +7,13 @@ import LoginForm from "../src/components/LoginForm";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import App from "./App";
-// import { Navigate } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
-        <LoginForm />
+        <Home />
         <Outlet />
       </>
     ),
@@ -25,8 +24,8 @@ const router = createBrowserRouter([
     element: <Profile />,
   },
   {
-    path: "/Home",
-    element: <Home />,
+    path: "/login",
+    element: <LoginForm />,
   },
   {
     path: "/App",

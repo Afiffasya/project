@@ -10,7 +10,7 @@ import App from "./App";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/home",
     element: (
       <>
         <Home />
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: <Profile />,
   },
   {
-    path: "/login",
+    path: "/",
     element: <LoginForm />,
   },
   {

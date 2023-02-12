@@ -3,17 +3,17 @@ import { getMovieList, searchMovie } from "../api";
 import "../style/Home.css";
 import { Container, Navbar, Row, Col, NavDropdown } from "react-bootstrap";
 import PopularMovieSlider from "./Movies";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [popularMovies, setPopularMovies] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!localStorage.getItem("sessionId")) {
-      navigate("/");
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   if (!localStorage.getItem("sessionId")) {
+  //     navigate("/");
+  //   }
+  // }, [navigate]);
 
   useEffect(() => {
     getMovieList().then((result) => {
@@ -60,7 +60,7 @@ function Home() {
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item
-                    href="/login"
+                    href="/"
                     className="prof"
                     onClick={handleLogout}
                   >

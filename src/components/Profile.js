@@ -19,7 +19,7 @@ function Profile() {
       {sid ? <h1>You are logged in as {sid}</h1> : <h1>Loading...</h1>}
       <button onClick={() => navigate("/home")}>
         <svg
-          class="back-icon"
+          className="back-icon"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
         >

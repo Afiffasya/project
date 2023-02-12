@@ -19,7 +19,15 @@
   .logo {
     font-size: 40px;
     font-weight: bold;
-    color: #FFAC41;
+    cursor: pointer;
+    text-shadow: 0 0 10px #FFAC41, 0 0 20px #FFAC41;
+  }
+  .logo:nth-child(1):hover {
+    transform: scale(1.05);
+  }
+  .logo:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #FFAC41;
   }
   .Movie-search {
     width: 100%;

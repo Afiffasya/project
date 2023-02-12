@@ -1,6 +1,15 @@
 .Movie-container {
   margin-top: 5vh;
 }
+.movie-card {
+    perspective: 1000px;
+    width: 19rem;
+    height: 100%;
+    margin: 25px;
+    text-align: center;
+    background-color: #FFAC41;
+    border-radius: 10px;
+  }
 .movie-card img {
     width: 100%;
     height: 30vh;
@@ -15,13 +24,6 @@
   .item {
     font-weight: bold;
   }
-  .movie-card {
-    perspective: 1000px;
-    width: 19rem;
-    text-align: center;
-    background-color: #FFAC41;
-    border-radius: 10px;
-  }
   .card-body {
     position: relative;
     transform-style: preserve-3d;
@@ -32,8 +34,8 @@
     perspective: 1000px;
     position: relative;
     width: 19rem;
-    margin: 15px;
-    background-color: #FFAC41;
+    margin: 35px;
+    background-color: #ff9100;
     height: 450px;
     border-radius: 10px;
   }
@@ -57,7 +59,7 @@
     backface-visibility: hidden;
   }
   .flip-card-back {
-    background-color: #FFAC41;
+    background-color: #ff9100;
     color: #000000;
     font-weight: bold;
     transform: rotateY(180deg);

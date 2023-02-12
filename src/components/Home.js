@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getMovieList, searchMovie } from "../api";
 import "../style/Home.css";
 import { Container, Navbar, Row, Col, NavDropdown } from "react-bootstrap";
-import PopularMovieSlider from "./Movies";
+import PopularMovieList from "./Movies";
 // import { useNavigate } from "react-router-dom";
 
 function Home() {
@@ -38,7 +38,8 @@ function Home() {
       <Container fluid style={{ marginBottom: "40px" }}>
         <Row>
           <Navbar collapseOnSelect expand="lg">
-            <Col xs="4" className="logo" href="#home">
+            <Col xs="4" className="logo">
+              <div className="lightbar"></div>
               A-Movies
             </Col>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -56,7 +57,7 @@ function Home() {
               <Col xs={6} md={4}>
                 <NavDropdown title="Dashboard" id="nav-dropdown">
                   <NavDropdown.Item href="/profile" className="prof">
-                    Account
+                    afsya
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item
@@ -78,7 +79,7 @@ function Home() {
         </div>
       )}
       <div className="Movie-container">
-        <PopularMovieSlider popularMovies={popularMovies} />
+        <PopularMovieList popularMovies={popularMovies} />
       </div>
     </div>
   );

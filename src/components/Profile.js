@@ -16,7 +16,7 @@ function Profile() {
   }, [navigate]);
   return (
     <div className="message">
-      {sid ? <h1>You are logged in as {sid}</h1> : <h1>Loading...</h1>}
+      {sid ? <p>You are logged in as {sid}</p> : <p>Loading...</p>}
       <button onClick={() => navigate("/home")}>
         <svg
           className="back-icon"

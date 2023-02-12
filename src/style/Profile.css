@@ -1,17 +1,19 @@
+
   .message {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 50vh;
-    width: 50%;
+    width: 95%;
     margin: auto;
     border: 4px solid #FFAC41;
     background: linear-gradient(0.25turn, #020202, #7a6333, #f58207);
     box-shadow: 22px 22px 22px #f58207, 15px 22px 22px #f58207;
     border-radius: 20px;
+    min-height: 10px;
   }
-  h1 {
+  p {
     font-size: 36px;
     text-align: center;
     color: #FFAC41;

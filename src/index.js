@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         <Outlet />
       </>
     ),
-    // errorElement: <p>Page Not Found</p>,
+    errorElement: <p>Page Not Found</p>,
   },
   {
     path: "/profile",

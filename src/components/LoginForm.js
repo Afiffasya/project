@@ -53,7 +53,6 @@ const LoginForm = () => {
                   if (session_id) {
                     localStorage.setItem("SID", session_id);
                     navigate("/home");
-                    // window.location.assign("/")
                     alert(
                       `Berhasil login sebagai: ${values.username} dengan session id: ${session_id}`
                     );

@@ -10,17 +10,9 @@ import {
   FormControl,
 } from "react-bootstrap";
 import PopularMovieList from "./Movies";
-// import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [popularMovies, setPopularMovies] = useState([]);
-  // const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   if (!localStorage.getItem("sessionId")) {
-  //     navigate("/");
-  //   }
-  // }, [navigate]);
 
   useEffect(() => {
     getMovieList().then((result) => {
@@ -50,12 +42,17 @@ function Home() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className="navss">
             <Nav className="ml-auto">
-            <Form inline="true" className="mr-auto form-center">
-  <FormControl type="text" placeholder="Search your movies" className="Movie-search" onChange={({ target }) => {
-    setSearchText(target.value);
-    search(target.value);
-  }} />
-</Form>
+              <Form inline="true" className="mr-auto form-center">
+                <FormControl
+                  type="text"
+                  placeholder="Search your movies"
+                  className="Movie-search"
+                  onChange={({ target }) => {
+                    setSearchText(target.value);
+                    search(target.value);
+                  }}
+                />
+              </Form>
               {searchText.length > 0 && (
                 <div className="search-result-text">
                   <strong>{"Results for " + searchText}</strong>

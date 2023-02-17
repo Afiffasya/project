@@ -1,33 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../style/Profile.css";
+import { Card, Button } from "react-bootstrap";
+import axios from "axios";
+import "../style/Profile.css"
+
+const API_KEY = process.env.REACT_APP_APIKEY;
 
 function Profile() {
-  const [sid, setSid] = useState(null);
+  const [username, setUsername] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    const storedSid = localStorage.getItem("SID");
-    if (!storedSid) {
-      navigate("/");
+    const sessionID = localStorage.getItem("SID");
+    if (sessionID) {
+      axios({
+        method: "get",
+        url: `https://api.themoviedb.org/3/account?api_key=${API_KEY}&session_id=${sessionID}`
+      })
+      .then((response) => {
+        setUsername(response.data.username);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
     } else {
-      setSid(storedSid);
+      navigate("/");
     }
   }, [navigate]);
+
   return (
-    <div className="message">
-      {sid ? <p>You are logged in as {sid}</p> : <p>Loading...</p>}
-      <button onClick={() => navigate("/home")}>
-        <svg
-          className="back-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-        >
-          <path d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 10l5.293 5.293a1 1 0 010 1.414z" />
-        </svg>
-        Go to Home
-      </button>
-    </div>
+    <Card className="message">
+      <Card.Body>
+        {username ? (
+          <>
+            <Card.Title className="tittle">You are logged in as {username}</Card.Title>
+            <Button variant="primary" onClick={() => navigate("/Home")}>
+              Go to Home
+            </Button>
+          </>
+        ) : (
+          <Card.Text className="tex">Loading...</Card.Text>
+        )}
+      </Card.Body>
+    </Card>
   );
 }
 
